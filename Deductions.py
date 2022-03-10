@@ -45,7 +45,7 @@ class Deductions(dict):
     # method that will populate all of the deductions
     def obtain_deductions(self, grading_list_dicts):
         i = 0
-        while not isnan(grading_list_dicts[i]['Points Deducted']):
+        while i < len(grading_list_dicts) and not isnan(grading_list_dicts[i]['Points Deducted']):
             self.obtain_deduction(grading_list_dicts[i])
             i += 1
 
